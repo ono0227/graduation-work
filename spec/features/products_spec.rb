@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "Potepan::Products", type: :feature do
   describe "display #show" do
     let(:product) { create(:product) }
-    let(:image){ create(:image) }
+    let(:image) { create(:image) }
 
     background do
       product.images << image
