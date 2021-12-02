@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.feature "Potepan::Products", type: :feature do
   describe "display #show" do
-    let(:product) {create(:product)}
-    let(:image){create(:image)}
+    let(:product) { create(:product) }
+    let(:image){ create(:image) }
 
     background do
       product.images << image
@@ -11,7 +11,7 @@ RSpec.feature "Potepan::Products", type: :feature do
     end
 
     scenario "商品画像が表示されること" do
-      expect(page).to have_selector ('img, [src$="#{image.filename}"]')
+      expect(page).to have_selector('img, [src$="#{image.filename}"]')
     end
   end
 end
