@@ -1,6 +1,6 @@
 module ApplicationHelper
-  def full_title(page_title)
+  def full_title(full_title = '')
     base_title = "BIGBAG Store".freeze
-    page_title.blank? ? 'base_title' : '#{page_title} - #{base_title}'
+    full_title.blank? ? base_title : "#{full_title} - #{base_title}"
   end
 end
