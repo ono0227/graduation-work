@@ -2,8 +2,6 @@
 <html>
   <head>
     <%= render "shared/head" %>
-    <title><%= full_title(yield(:title)) %></title>
-    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
@@ -12,5 +10,6 @@
       <%= yield %>
       <%= render "shared/footer" %>
     </div>
+    <%= javascript_include_tag 'application' %>
   </body>
 </html>
