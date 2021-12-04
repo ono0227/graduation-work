@@ -5,11 +5,11 @@
   </head>
 
   <body>
+    <%= render "layouts/header" %>
     <div class="main-wrapper">
-      <%= render "layouts/header" %>
       <%= yield %>
       <%= render "layouts/footer" %>
+      <%= javascript_include_tag 'application' %>
     </div>
-    <%= javascript_include_tag 'application' %>
   </body>
 </html>
