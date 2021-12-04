@@ -6,10 +6,8 @@
 
   <body>
     <%= render "layouts/header" %>
-    <div class="main-wrapper">
-      <%= yield %>
-      <%= render "layouts/footer" %>
-      <%= javascript_include_tag 'application' %>
-    </div>
+    <%= yield %>
+    <%= render "layouts/footer" %>
+    <%= javascript_include_tag 'application' %>
   </body>
 </html>
