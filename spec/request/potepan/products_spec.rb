@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "Potepan::Products", type: :request do
-  let(:product) { create(:product, taxons:[taxon]) }
-  let(:taxon) {create(:taxon)}
+  let(:product) { create(:product, taxons: [taxon]) }
+  let(:taxon) { create(:taxon) }
 
   describe "Get /potepan/products/:id" do
     it '商品詳細画面の表示に成功すること' do

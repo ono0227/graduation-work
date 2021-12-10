@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.feature "Potepan::Categories", type: :feature do
-  let(:product) {create(:product, taxons:[taxon])}
-  let(:image) {create(:image)}
-  let(:taxon){create(:taxon, taxonomy[:taxonomy])}
-  let(:taxonomy){create(:taxonomy)}
+  let(:product) { create(:product, taxons: [taxon]) }
+  let(:image) { create(:image) }
+  let(:taxon) { create(:taxon, taxonomy[:taxonomy]) }
+  let(:taxonomy) { create(:taxonomy) }
 
   background do
     product.images << image
