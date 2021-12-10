@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Potepan::Categories", type: :request do
-  let(:product) {create(:product, taxons: [taxon]) }
+  let(:product) { create(:product, taxons: [taxon]) }
   let(:taxon) { create(:taxon, taxonomy[:taxonomy]) }
   let(:taxonomy) { create(:taxonomy) }
 
