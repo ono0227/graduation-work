@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.feature "Potepan::Products", type: :feature do
-  let(:product) { create(:product) }
+  let(:taxon){ create(:taxon) }
+  let(:product) { create(:product, taxons:[taxon]) }
   let(:image) { create(:image) }
 
   background do
@@ -14,5 +15,10 @@ RSpec.feature "Potepan::Products", type: :feature do
     expect(page).to have_content product.display_price
     expect(page).to have_content product.description
     expect(page).to have_selector('img, [src$="#{image.filename}"]')
+  end
+
+  scenario "一覧ページへ戻るをクリックするとカテゴリー一覧ページに移動する" do
+    click_on '一覧ページへ戻る'
+    expect(current_path).to eq potepan_category_path(taxon.id)
   end
 end
