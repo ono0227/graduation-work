@@ -10,7 +10,7 @@ RSpec.feature "Potepan::Categories", type: :feature do
     product.images << image
     visit potepan_category_path(taxon.id)
   end
-  
+
   scenario "サブカテゴリーを選択すると、属する商品情報が表示されること" do
     within('.productBox') do
       expect(page).to have_content product.name
