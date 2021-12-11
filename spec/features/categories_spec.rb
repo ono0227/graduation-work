@@ -22,4 +22,14 @@ RSpec.feature "Potepan::Categories", type: :feature do
   scenario "カテゴリー一覧に表示される件数とサブカテゴリー横に表示される件数が同じであること" do
     expect(page).to have_selector('.side-nav', count: taxon.products.count)
   end
+
+  scenario "商品を選択したら、商品詳細ページに移動すること" do
+    click_on product.name
+    expect(current_path).to eq potepan_product_path(product.id)
+  end
+
+  scenario "カテゴリーを選択したら、サブカテゴリーが表示される" do
+    find('.side-nav').click
+    expect(page).to have_content taxon.name
+  end
 end
