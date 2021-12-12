@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Potepan::Categories", type: :feature do
   let(:product) { create(:product, taxons: [taxon]) }
-  let(:product2) { create(:product, price:"20.00", taxons: [taxon]) }
+  let(:product2) { create(:product, price: "20.00", taxons: [taxon]) }
   let(:image) { create(:image) }
   let(:taxon) { create(:taxon, taxonomy[:taxonomy]) }
   let(:taxonomy) { create(:taxonomy) }
