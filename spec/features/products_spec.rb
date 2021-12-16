@@ -4,7 +4,7 @@ RSpec.feature "Potepan::Products", type: :feature do
   let(:taxon) { create(:taxon) }
   let(:product) { create(:product, taxons: [taxon]) }
   let(:image) { create(:image) }
-  let(:related_products){ create_list(:product, 4, taxons: [taxon]) }
+  let(:related_products) { create_list(:product, 4, taxons: [taxon]) }
 
   background do
     product.images << image
