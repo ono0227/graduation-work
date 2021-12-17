@@ -28,4 +28,9 @@ RSpec.feature "Potepan::Products", type: :feature do
     click_link related_products.first.name
     expect(current_path).to eq potepan_product_path(related_products.first.id)
   end
+
+  scenario "関連商品の要素が４つ表示されること" do
+    expect(page).to have_selector('.productImage', count: 4)
+    expect(page).to have_selector('.productCaption', count: 4)
+  end
 end
