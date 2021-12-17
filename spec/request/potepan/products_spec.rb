@@ -16,15 +16,15 @@ RSpec.describe "Potepan::Products", type: :request do
       expect(response).to have_http_status(200)
     end
 
-    it '関連商品を最大4つ取得し表示できること' do
+    it '関連商品を４つ取得し表示できるが、5つ目の関連商品は取得と表示ができないこと' do
       within('.productBox') do
         related_products[0..3].all? do |related_product|
           expect(response.body).to include related_product.name
           expect(response.body).to include related_product.display_price.to_s
           expect(response.body).to include('#{related_product.id}-img')
         end
-        expect(response.body).not_to include related_products.forth.name
-        expect(response.body).not_to include related_products.forth.display_price.to_s
+        expect(response.body).not_to include related_products[4].name
+        expect(response.body).not_to include related_products[4].display_price.to_s
         expect(response.body).not_to include('#{related_product[4].id}-img')
       end
     end
