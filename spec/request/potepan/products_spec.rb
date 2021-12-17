@@ -16,7 +16,7 @@ RSpec.describe "Potepan::Products", type: :request do
       expect(response).to have_http_status(200)
     end
 
-    it '関連商品を4つ取得し表示できること' do
+    it '関連商品を最大4つ取得し表示できること' do
       within('.productBox') do
         related_products[0..3].all? do |related_product|
           expect(response.body).to include related_product.name
