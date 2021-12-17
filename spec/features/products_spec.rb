@@ -4,7 +4,7 @@ RSpec.feature "Potepan::Products", type: :feature do
   let(:taxon) { create(:taxon) }
   let(:product) { create(:product, taxons: [taxon]) }
   let(:image) { create(:image) }
-  let(:related_products) { create_list(:product, 4, taxons: [taxon]) }
+  let(:related_products) { create_list(:product, 5, taxons: [taxon]) }
 
   background do
     product.images << image
@@ -29,8 +29,11 @@ RSpec.feature "Potepan::Products", type: :feature do
     expect(current_path).to eq potepan_product_path(related_products.first.id)
   end
 
-  scenario "関連商品の要素が４つ表示されること" do
-    expect(page).to have_selector('.productImage', count: 4)
-    expect(page).to have_selector('.productCaption', count: 4)
+  scenario "関連商品を最大4つ表示できること" do
+    expect(page).to have_content related_products.first.name
+    expect(page).to have_content related_products.second.name
+    expect(page).to have_content related_products.third.name
+    expect(page).to have_content related_products.fourth.name
+    expect(page).not_to have_content related_products.fifth.name
   end
 end
