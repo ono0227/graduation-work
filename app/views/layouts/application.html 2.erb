@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render "layouts/head" %>
+  </head>
+
+  <body>
+    <div class="main-wrapper">
+      <%= render "layouts/header" %>
+      <%= yield %>
+      <%= render "layouts/footer" %>
+    </div>
+    <%= javascript_include_tag 'application' %>
+  </body>
+</html>

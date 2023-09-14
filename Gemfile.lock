@@ -1234,6 +1234,7 @@ GEM
       execjs (~> 2.0)
       sprockets (>= 2.0.0)
       tilt (>= 1.2)
+    httpclient (2.8.3)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.1)
@@ -1555,6 +1556,7 @@ DEPENDENCIES
   byebug
   capybara
   factory_bot_rails
+  httpclient
   jbuilder (~> 2.11)
   listen (>= 3.0.5, < 4.0)
   mysql2 (~> 0.5.3)

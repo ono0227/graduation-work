@@ -59,6 +59,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.1'
   gem 'rubocop-airbnb'
+  gem 'httpclient'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
