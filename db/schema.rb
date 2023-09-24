@@ -942,7 +942,6 @@ ActiveRecord::Schema.define(version: 2021_05_16_054806) do
     t.integer "originator_id"
     t.datetime "created_at", precision: 6
     t.datetime "updated_at", precision: 6
-    t.decimal "amount_remaining", precision: 8, scale: 2
     t.integer "store_credit_reason_id"
     t.index ["deleted_at"], name: "index_spree_store_credit_events_on_deleted_at"
     t.index ["store_credit_id"], name: "index_spree_store_credit_events_on_store_credit_id"
